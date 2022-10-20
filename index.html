@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7 - SVG's</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+
+        <h1>SVG - Scalable Vector Graphic</h1>
+
+        <!-- We can use the SVG by simply adding it as an image -->
+        <img src="images/myfirst.svg" alt="graphic of a square with a circle">
+
+        <!-- We can use the SVG by embedding the code directly in HTML -->
+        <svg class="dice" width="200" height="300" viewbox="0 0 200 300">
+
+            <rect x="0" y="0" width="200" height="200" rx="8" ry="8" fill="#4DD0E1"/>
+        
+            <circle cx="50" cy="50" r="25" fill="#D50000" />
+        </svg>
+
+        <!-- Reusing graphics -->
+        <svg class="dice" width="200" height="300" viewbox="0 0 200 300">
+
+            <rect x="0" y="0" width="200" height="200" rx="8" ry="8" fill="#4DD0E1"/>
+        
+            <circle id="dot" cx="50" cy="50" r="25" fill="#D50000" />
+
+            <use xlink:href="#dot" x="100" />
+            <use xlink:href="#dot" x="100" y="100" />
+            <use xlink:href="#dot" x="0" y="100" />
+        </svg>
+
+        <!-- defs, use and group -->
+        <svg class="dice5" width="200" height="300" viewbox="0 0 200 300">
+            <defs>
+                <rect id="box" x="0" y="0" width="200" height="200" rx="8" ry="8" fill="#4DD0E1"/>
+        
+                <circle id="point" cx="50" cy="50" r="25" fill="#D50000"/>
+            </defs>
+
+            <use xlink:href="#box" x="0" y="0"/>
+
+            <g>
+                <use xlink:href="#point" x="0" y="0"/>
+                <use xlink:href="#point" x="100" y="0"/>
+                <use xlink:href="#point" x="100" y="100"/>
+                <use xlink:href="#point" x="0" y="100"/>
+                <use xlink:href="#point" x="50" y="50"/>
+            </g>
+        </svg>
+
+        <!-- Gradient & Text -->
+        <svg width="250" height="50" viewbox="0 0 250 50"></svg>
+            <defs>
+                <linearGradient id="mygradient">
+                    <stop offset="0%" stop-color="#F57C00"/>
+                    <stop offset="60%" stop-color="#F57C00"/>
+                    <stop offset="100%" stop-color="#D50000"/>
+                </linearGradient>
+            </defs>
+
+            <text x="0" y="50" fill="url(#mygradient)" font-size="3rem">
+                Colorful
+            </text>
+
+        </svg>
+
+        <!-- SVG pattern and text -->
+        <svg width="320" height="200" viewbox="0 0 320 200">
+            <defs>
+                <pattern width="320" height="200" id="zigzag" patternUnits="userSpaceOnUse">
+                    <image width="320" height="200" xlink:href="http://placepattern.com/940/300"/>
+                </pattern>
+            </defs>
+            <text class="patterntext" x="0" y="100" fill="url(#zigzag)">
+                Pattern
+            </text>
+        </svg>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+body {
+    background-color: antiquewhite;
+}
+
+.dice circle {
+    fill: #F57C00;
+    transition: all .3s;
+    transform-origin: 25px 25px;
+}
+
+.dice:hover circle {
+    transform: scale(1.1);
+}
+
+.dice5 g {
+    transition: all .3s;
+    transform-origin: 100px 100px;
+}
+
+.dice5:hover g {
+    transform: scale(1.2);
+}
+
+.patterntext {
+    font-size: 4rem;
+    font-weight: bold;
+}
