@@ -25,3 +25,35 @@ body {
     font-size: 4rem;
     font-weight: bold;
 }
+
+.cls-1{
+    fill:#ffe269;
+}
+
+.cls-2{
+    fill:#fff;
+}
+
+.cls-3{
+    fill:#fcf0c0;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0)
+    }
+    50% {
+        transform: translateX(10px)
+    }
+    1000% {
+        transform: translateX(0)
+    }
+}
+
+.pupil {
+    animation: move 1s infinite;
+}
+
+.smiley-wrap svg:hover .pupil {
+    animation-play-state: paused;
+}
